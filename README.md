@@ -22,6 +22,10 @@ Install the package using Composer:
 $ composer require summerblue/sudo-su
 ```
 
+Selected user in .env file:
+
+	SUDO_USER_IDS=1,2,3
+
 Add the package's service provider to your app in your project's `AppServiceProvider`:
 
 ```php

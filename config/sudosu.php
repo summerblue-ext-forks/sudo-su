@@ -36,9 +36,12 @@ return [
     |
     | Using whereIn($user_ids) for selecting users. Can be:
     | 'user_ids' => [2,3,4],
-    | Empty will select all.
+    | 
+    | Empty will select all. .env setup: 
+    | 
+    / SUDO_USER_IDS=1,2,3
      */
-    'user_ids' => [],
+    'user_ids' => env('SUDO_USER_IDS') ? explode(',', env('SUDO_USER_IDS')) : [],
 
     /*
     |--------------------------------------------------------------------------
