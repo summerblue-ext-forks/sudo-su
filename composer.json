@@ -1,5 +1,5 @@
 {
-    "name": "viacreative/sudo-su",
+    "name": "summerblue/sudo-su",
     "description": "A utility package for logging in as other users",
     "keywords": ["laravel", "debugging"],
     "license": "MIT",
