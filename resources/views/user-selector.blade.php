@@ -8,9 +8,12 @@
     
     <div class="sudoSu__interface {{ $hasSudoed ? 'sudoSu__interface--hasSudoed' : '' }} hidden" id="sudosu-js-interface">
         @if ($hasSudoed)
-            <div class="sudoSu__infoLine">
-                You are using account: <span>{{ $currentUser->name }}</span>
-            </div>
+        
+            @if ($currentUser)
+                <div class="sudoSu__infoLine">
+                    You are using account: <span>{{ $currentUser->name }}</span>
+                </div>
+            @endif
             
             @if ($originalUser)
                 <div class="sudoSu__infoLine">
