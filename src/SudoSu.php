@@ -105,7 +105,13 @@ class SudoSu
 
         $user = $this->getUserModel();
 
-        return $this->usersCached = $user->get();
+        if ($user_ids = config('sudosu.user_ids')) {
+            $this->usersCached = $user->whereIn('id', $user_ids)->get();
+        } else {
+            $this->usersCached = $user->limit(config('sudosu.max_user'))->get();
+        }
+
+        return $this->usersCached;
     }
 
     protected function getUserModel()

@@ -15,7 +15,7 @@ return [
     |
      */
     
-    'allowed_tlds' => ['dev', 'local'],
+    'allowed_tlds' => ['dev', 'local', 'test'],
 
     /*
     |--------------------------------------------------------------------------
@@ -28,5 +28,26 @@ return [
      */
     
     'user_model' => App\User::class
+
+    /*
+    |--------------------------------------------------------------------------
+    | Limited user
+    |--------------------------------------------------------------------------
+    |
+    | Using whereIn($user_ids) for selecting users. Can be:
+    | 'user_ids' => [2,3,4],
+    | Empty will select all.
+     */
+    'user_ids' => [],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Maximum user count
+    |--------------------------------------------------------------------------
+    |
+    | How many user can be selected. Available when user_ids is set to empty array.
+    |
+     */
+    'max_user' => 50,
     
 ];
